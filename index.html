@@ -40,66 +40,60 @@ body {
 .wrap {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  max-width: 1180px;
   min-height: 100dvh;
   margin: 0 auto;
-  padding: clamp(1.5rem, 4vh, 3rem) clamp(1.25rem, 5vw, 2.5rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(1.4rem, 3.6vh, 2.6rem);
+  padding: clamp(1.5rem, 4vh, 3rem) clamp(1.5rem, 5vw, 3.5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
 }
 
-/* ---------- Masthead ---------- */
-.title-row {
+/* ---------- Left: content column ---------- */
+.content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: clamp(1rem, 2.2vh, 1.5rem);
 }
+
 .name {
   font-family: Georgia, "Times New Roman", Cambria, serif;
   font-weight: 700;
-  font-size: clamp(2.8rem, 8vw, 4.6rem);
+  font-size: clamp(2.6rem, 5.2vw, 4rem);
   line-height: 0.98;
   letter-spacing: -0.02em;
   margin: 0;
 }
-.bunny {
-  height: clamp(300px, 40vh, 350px);
-  width: auto;
-  flex: 0 0 auto;
-  transform: scaleX(-1);            /* flipped vertically */
-}
+
 .tagline {
   font-family: Georgia, "Times New Roman", Cambria, serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   color: var(--muted);
-  margin: 0.9rem 0 0;
-}
-
-/* ---------- Intro ---------- */
-.intro {
-  max-width: 54ch;
   margin: 0;
-  font-size: clamp(1rem, 1.6vw, 1.08rem);
 }
 
-/* ---------- Section cards ---------- */
+.intro {
+  max-width: 58ch;
+  margin: 0;
+  font-size: clamp(1rem, 1.3vw, 1.06rem);
+}
+
+/* ---------- Cards (side by side, wide not tall) ---------- */
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(0.75rem, 1.6vw, 1.1rem);
-  max-width: 560px;
+  gap: clamp(0.75rem, 1.4vw, 1rem);
+  max-width: 520px;
 }
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  padding: clamp(1rem, 2.4vh, 1.4rem) 1.15rem clamp(1.1rem, 2.6vh, 1.5rem);
+  padding: clamp(0.9rem, 2vh, 1.2rem) 1.1rem clamp(1rem, 2.2vh, 1.3rem);
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.35);
@@ -117,18 +111,18 @@ body {
 }
 .card-title {
   font-family: Georgia, "Times New Roman", Cambria, serif;
-  font-size: clamp(1.3rem, 2.4vw, 1.55rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.4rem);
   font-weight: 700;
   line-height: 1.1;
 }
 .card-desc {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 .card-arrow {
   position: absolute;
   right: 1rem;
-  bottom: 0.9rem;
+  bottom: 0.85rem;
   color: var(--rose-dk);
   opacity: 0;
   transform: translateX(-4px);
@@ -141,12 +135,13 @@ body {
 
 /* ---------- Footer ---------- */
 .foot {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   color: var(--muted);
   display: flex;
   align-items: center;
   gap: 0.55rem;
   flex-wrap: wrap;
+  margin-top: 0.3rem;
 }
 .foot a {
   color: var(--rose-dk);
@@ -157,22 +152,42 @@ body {
 .foot a:hover { border-color: var(--rose-dk); }
 .foot-dot { color: var(--line); }
 
+/* ---------- Right: bunny column ---------- */
+.visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.bunny {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  filter: drop-shadow(0 12px 26px rgba(86, 111, 88, 0.32));
+  transform: scaleY(-1) scaleX(-1);   /* upside down + mirrored */
+}
+
 /* ---------- Motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
-  .masthead, .intro, .cards, .foot { animation: rise 0.6s ease both; }
-  .intro { animation-delay: 0.07s; }
-  .cards { animation-delay: 0.14s; }
-  .foot  { animation-delay: 0.21s; }
+  .content, .visual { animation: rise 0.6s ease both; }
+  .visual { animation-delay: 0.1s; }
   @keyframes rise {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 }
 
-/* ---------- Small screens ---------- */
-@media (max-width: 620px) {
-  .wrap { justify-content: flex-start; padding-top: 2rem; gap: 1.3rem; }
-  .cards { grid-template-columns: 1fr; gap: 0.6rem; }
+/* ---------- Small / narrow screens: stack, bunny still big up top ---------- */
+@media (max-width: 860px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding-top: 2rem;
+    gap: 1.5rem;
+  }
+  .visual { order: -1; }
+  .bunny { max-width: 260px; margin: 0 auto; }
+  .cards { grid-template-columns: 1fr; gap: 0.6rem; max-width: none; }
   .card {
     flex-direction: row;
     align-items: baseline;
@@ -181,52 +196,49 @@ body {
   }
   .card-desc { margin-left: auto; text-align: right; }
   .card-arrow { display: none; }
-  .bunny { height: 110px; }
-  .sprig { display: none; }   /* avoid collision with bunny on phones */
 }
-
 </style>
 </head>
 <body>
-
   <main class="wrap">
-    <header class="masthead">
-      <div class="title-row">
-        <div class="title-text">
-          <h1 class="name">Nia&nbsp;M.</h1>
-        </div>
-        <img class="bunny" src="Bunny.png" alt="Nia's green mechanical bunny" />
-      </div>
+    <div class="content">
+      <h1 class="name">Nia&nbsp;M.</h1>
       <p class="tagline">Living &amp; learning in a naturally beautiful world.</p>
-    </header>
 
-    <p class="intro">
-      Hello I am Nia- a research assistant for Professor David Evans, inaugural member of UVA's Student Technology Council, and Vice President of VAISI. I am interested in the unprecedented impact of AI on the world at large, where this creates friction with systems of education and what technical and policy solutions can bring about productive change. I am a Robert Kent Gooch scholar and recipient of the CS undergraduate researcher award.
+      <p class="intro">
+        Hello I am Nia- a research assistant for Professor David Evans,
+        inaugural member of UVA's Student Technology Council, and Vice
+        President of VAISI. I am interested in the unprecedented impact of
+        AI on the world at large, where this creates friction with systems
+        of education and what technical and policy solutions can bring
+        about productive change. I am a Robert Kent Gooch scholar and
+        recipient of the CS undergraduate researcher award.
+      </p>
 
-  
-    </p>
+      <nav class="cards" aria-label="Sections">
+        <a class="card" href="assets/resume.pdf" target="_blank" rel="noopener">
+          <span class="card-title">Resume</span>
+          <span class="card-desc">Experience &amp; skills &middot; PDF</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </a>
+        <!-- TODO: replace href with your booking link (Calendly, Cal.com, etc.) -->
+        <a class="card" href="#book" target="_blank" rel="noopener">
+          <span class="card-title">Time</span>
+          <span class="card-desc">Book a chat</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </a>
+      </nav>
 
-    <nav class="cards" aria-label="Sections">
-      <a class="card" href="resume.pdf" target="_blank" rel="noopener">
-        <span class="card-title">Resume</span>
-        <span class="card-desc">Experience &amp; skills &middot; PDF</span>
-        <span class="card-arrow" aria-hidden="true">↗</span>
-      </a>
-      <!-- TODO: replace href with your booking link (Calendly, Cal.com, etc.) -->
-      <a class="card" href="https://bookings.cloud.microsoft/bookwithme/user/ce671a40730e45f89d8baac38714e128%40virginia.edu?anonymous&ismsaljsauthenabled" target="_blank" rel="noopener">
-        <span class="card-title">Time</span>
-        <span class="card-desc">Book a chat</span>
-        <span class="card-arrow" aria-hidden="true">↗</span>
-      </a>
-    </nav>
+      <footer class="foot">
+        <a href="mailto:uma8fb@virginia.edu">uma8fb@virginia.edu</a>
+        <span class="foot-dot" aria-hidden="true">·</span>
+        <span>&copy; 2026 Nia&nbsp;M.</span>
+      </footer>
+    </div>
 
-    <footer class="foot">
-      <a href="mailto:uma8fb@virginia.edu">uma8fb@virginia.edu</a>
-      <span class="foot-dot" aria-hidden="true">·</span>
-      <span>&copy; 2026 Nia&nbsp;M.</span>
-    </footer>
+    <div class="visual">
+      <img class="bunny" src="assets/bunny.png" alt="Nia's green mechanical bunny" />
+    </div>
   </main>
-</body>
-</html>
 </body>
 </html>
