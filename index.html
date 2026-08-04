@@ -37,19 +37,6 @@ body {
   overflow-x: hidden;
 }
 
-/* botanical sprig */
-.sprig {
-  position: fixed;
-  top: -10px;
-  right: clamp(-30px, 2vw, 40px);
-  width: clamp(120px, 16vw, 200px);
-  height: auto;
-  color: var(--sage);
-  opacity: 0.5;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .wrap {
   position: relative;
   z-index: 1;
@@ -79,11 +66,10 @@ body {
   margin: 0;
 }
 .bunny {
-  height: clamp(120px, 18vh, 180px);
+  height: clamp(150px, 22vh, 220px);
   width: auto;
   flex: 0 0 auto;
-  filter: drop-shadow(0 6px 14px rgba(86, 111, 88, 0.28));
-  transform: scaleY(-1);            /* flipped vertically */
+  transform: scaleY(-1) scaleX(-1);            /* flipped vertically */
 }
 .tagline {
   font-family: Georgia, "Times New Roman", Cambria, serif;
@@ -202,17 +188,6 @@ body {
 </style>
 </head>
 <body>
-  <!-- soft botanical sprig, top-right texture -->
-  <svg class="sprig" viewBox="0 0 200 260" aria-hidden="true" fill="none">
-    <path d="M150 250 C150 180 150 90 120 30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-    <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <path d="M148 210 C120 205 100 190 92 168 C120 168 140 182 148 210 Z" fill="currentColor" fill-opacity="0.18"/>
-      <path d="M150 176 C178 172 196 156 202 134 C176 132 158 146 150 176 Z" fill="currentColor" fill-opacity="0.18"/>
-      <path d="M146 140 C120 136 102 122 96 102 C122 100 138 114 146 140 Z" fill="currentColor" fill-opacity="0.18"/>
-      <path d="M140 104 C166 100 182 86 188 66 C164 64 148 78 140 104 Z" fill="currentColor" fill-opacity="0.18"/>
-      <path d="M130 70 C108 66 94 54 90 38 C112 36 124 48 130 70 Z" fill="currentColor" fill-opacity="0.18"/>
-    </g>
-  </svg>
 
   <main class="wrap">
     <header class="masthead">
