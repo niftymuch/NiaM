@@ -169,13 +169,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  padding: 1rem;   
 }
 .bunny {
-  width: 100%;
-  max-width: 860px;
+  width: 100%;      
   height: auto;
   filter: drop-shadow(0 12px 26px rgba(86, 111, 88, 0.32));
-  transform:  scaleX(-1);   /* upside down + mirrored */
+  transform: scaleY(-1) scaleX(-1);
 }
 
 /* ---------- Motion ---------- */
@@ -197,7 +197,7 @@ body {
     gap: 1.5rem;
   }
   .visual { order: -1; }
-  .bunny { max-width: 260px; margin: 0 auto; }
+  .bunny { width: 80% max-width: 420px; margin: 0 auto; }
   .cards { grid-template-columns: 1fr; gap: 0.6rem; max-width: none; }
   .card {
     flex-direction: row;
