@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nia M.</title>
+  <meta name="description" content="Nia M. — living &amp; learning in a naturally beautiful world." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Grandstander:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/bunny.png" />
+</head>
+<body>
+  <!-- ===== Animated bubbles (float upward, drift) ===== -->
+  <div class="bubbles" aria-hidden="true">
+    <span class="bubble" style="--x:6%;  --size:70px;  --dur:14s; --delay:0s;"></span>
+    <span class="bubble" style="--x:16%; --size:48px;  --dur:11s; --delay:2s;"></span>
+    <span class="bubble" style="--x:26%; --size:60px;  --dur:16s; --delay:1s;"></span>
+    <span class="bubble" style="--x:38%; --size:40px;  --dur:12s; --delay:4s;"></span>
+    <span class="bubble" style="--x:52%; --size:80px;  --dur:18s; --delay:3s;"></span>
+    <span class="bubble" style="--x:63%; --size:34px;  --dur:10s; --delay:6s;"></span>
+    <span class="bubble" style="--x:74%; --size:66px;  --dur:15s; --delay:2.5s;"></span>
+    <span class="bubble" style="--x:86%; --size:50px;  --dur:13s; --delay:5s;"></span>
+    <span class="bubble" style="--x:93%; --size:38px;  --dur:17s; --delay:1.5s;"></span>
+  </div>
+
+  <main class="page">
+    <!-- ===== Header: title + tagline + bunny ===== -->
+    <header class="hero">
+      <div class="hero-text">
+        <h1 class="title">
+          <!-- Animated butterfly perched near the title -->
+          <span class="butterfly" aria-hidden="true">
+            <svg viewBox="0 0 60 50" width="58" height="48">
+              <g class="bfly-wing bfly-left">
+                <path d="M30 25 C10 2, -4 14, 8 26 C-4 30, 10 46, 30 25 Z" fill="#f4a7c3"/>
+                <path d="M30 25 C16 8, 4 16, 12 25 C6 30, 16 40, 30 25 Z" fill="#8bd24a" opacity="0.8"/>
+              </g>
+              <g class="bfly-wing bfly-right">
+                <path d="M30 25 C50 2, 64 14, 52 26 C64 30, 50 46, 30 25 Z" fill="#f4a7c3"/>
+                <path d="M30 25 C44 8, 56 16, 48 25 C54 30, 44 40, 30 25 Z" fill="#8bd24a" opacity="0.8"/>
+              </g>
+              <rect x="29" y="14" width="2.4" height="24" rx="1.2" fill="#4a7d1f"/>
+              <path d="M30 14 C27 8, 25 7, 24 5" stroke="#4a7d1f" stroke-width="1.4" fill="none"/>
+              <path d="M31 14 C34 8, 36 7, 37 5" stroke="#4a7d1f" stroke-width="1.4" fill="none"/>
+            </svg>
+          </span>
+          Nia&nbsp;M.
+        </h1>
+        <p class="tagline">living &amp; learning in a naturally beautiful world</p>
+      </div>
+
+      <div class="hero-bunny">
+        <!-- Uses the exact PNG when present; falls back to the SVG recreation -->
+        <img src="assets/bunny.png" alt="A green mechanical bunny"
+             onerror="this.onerror=null;this.src='assets/bunny.svg';" />
+      </div>
+    </header>
+
+    <!-- ===== Bio panel ===== -->
+    <section class="bio-panel" aria-labelledby="bio-heading">
+      <h2 id="bio-heading" class="bio-title">bio</h2>
+      <p class="bio-text">
+        Hi, I'm Nia — welcome to my little corner of the internet. I love
+        wandering through the natural world, learning new things, and making
+        things grow. Poke around the stars below to find my resume, my work,
+        and how I like to spend my time.
+      </p>
+    </section>
+
+    <!-- Static dragonfly resting over the bio panel -->
+    <div class="dragonfly" aria-hidden="true">
+      <svg viewBox="0 0 220 120" width="240" height="130">
+        <!-- body -->
+        <line x1="40" y1="70" x2="205" y2="52" stroke="#a7d94f" stroke-width="7" stroke-linecap="round"/>
+        <line x1="40" y1="70" x2="205" y2="52" stroke="#5aa02a" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="203" cy="52" r="10" fill="#8bd24a" stroke="#4a7d1f" stroke-width="2"/>
+        <!-- upper wings -->
+        <path d="M150 55 C120 20, 70 22, 60 52 C95 54, 130 52, 150 55 Z" fill="#eaf5c9" stroke="#7ec13c" stroke-width="2.5"/>
+        <path d="M158 52 C185 22, 230 26, 235 50 C205 54, 175 52, 158 52 Z" fill="#eaf5c9" stroke="#f4a7c3" stroke-width="2.5"/>
+        <!-- lower wings -->
+        <path d="M148 60 C118 90, 72 92, 66 66 C100 62, 130 60, 148 60 Z" fill="#eaf5c9" stroke="#f4a7c3" stroke-width="2.5"/>
+        <path d="M158 58 C186 86, 226 84, 232 60 C202 60, 176 58, 158 58 Z" fill="#eaf5c9" stroke="#7ec13c" stroke-width="2.5"/>
+      </svg>
+    </div>
+
+    <!-- ===== Star navigation ===== -->
+    <nav class="stars" aria-label="Site sections">
+      <a class="star" href="resume.html">
+        <svg class="star-shape" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 4 L61 38 L97 38 L68 60 L79 95 L50 73 L21 95 L32 60 L3 38 L39 38 Z"/>
+        </svg>
+        <span class="star-label">my<br>resume</span>
+      </a>
+      <a class="star" href="work.html">
+        <svg class="star-shape" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 4 L61 38 L97 38 L68 60 L79 95 L50 73 L21 95 L32 60 L3 38 L39 38 Z"/>
+        </svg>
+        <span class="star-label">my<br>work</span>
+      </a>
+      <a class="star" href="time.html">
+        <svg class="star-shape" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 4 L61 38 L97 38 L68 60 L79 95 L50 73 L21 95 L32 60 L3 38 L39 38 Z"/>
+        </svg>
+        <span class="star-label">my<br>time</span>
+      </a>
+    </nav>
+  </main>
+</body>
+</html>

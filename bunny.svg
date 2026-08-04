@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 320" width="340" height="320">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a9cf8f"/>
+      <stop offset="1" stop-color="#7fb069"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#5f8f52" stroke-width="2.5" stroke-linejoin="round">
+    <!-- ears -->
+    <path d="M186 118 C178 60, 190 20, 205 16 C220 22, 224 66, 214 120 Z" fill="url(#body)"/>
+    <path d="M205 30 C199 60, 200 90, 204 112" fill="none" stroke="#5f8f52" stroke-width="2"/>
+    <path d="M226 122 C232 70, 250 40, 262 40 C270 52, 258 96, 240 128 Z" fill="url(#body)"/>
+    <!-- body -->
+    <path d="M120 300 C60 300, 60 210, 110 180 C150 150, 220 150, 250 190
+             C280 230, 270 300, 210 300 Z" fill="url(#body)"/>
+    <!-- head -->
+    <path d="M186 210 C176 150, 210 118, 250 128 C288 140, 292 200, 262 226
+             C236 248, 200 246, 186 210 Z" fill="url(#body)"/>
+    <!-- plating lines -->
+    <path d="M196 150 C220 138, 250 140, 272 156" fill="none" stroke="#5f8f52" stroke-width="2"/>
+    <path d="M188 178 C216 168, 250 170, 278 186" fill="none" stroke="#5f8f52" stroke-width="2"/>
+    <path d="M110 210 C150 196, 210 200, 250 216" fill="none" stroke="#5f8f52" stroke-width="2"/>
+    <path d="M104 240 C150 226, 214 230, 258 248" fill="none" stroke="#5f8f52" stroke-width="2"/>
+    <!-- chest cross detail -->
+    <circle cx="168" cy="220" r="16" fill="none" stroke="#5f8f52" stroke-width="2"/>
+    <path d="M168 210 v20 M158 220 h20" stroke="#5f8f52" stroke-width="2"/>
+    <!-- front leg -->
+    <path d="M214 300 C210 268, 226 260, 244 268 C260 276, 254 300, 240 300 Z" fill="url(#body)"/>
+    <!-- tail -->
+    <path d="M64 250 C44 244, 46 274, 70 272 C86 270, 84 254, 64 250 Z" fill="url(#body)"/>
+    <!-- muzzle -->
+    <path d="M282 196 C296 196, 298 210, 286 214 C278 216, 274 200, 282 196 Z" fill="url(#body)"/>
+    <!-- eye (glowing) -->
+    <circle cx="256" cy="164" r="9" fill="#b6f36a" stroke="#4a7d1f" stroke-width="2"/>
+    <circle cx="256" cy="164" r="3.5" fill="#eafcc9"/>
+  </g>
+</svg>
