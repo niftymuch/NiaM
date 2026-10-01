@@ -6,7 +6,6 @@
   <title>Nia M.</title>
   <meta name="description" content="Nia Mucher — living & learning in a naturally super world." />
 <style>
-
 .intro a {
   color: var(--rose-dk);
   text-decoration: underline;
@@ -19,14 +18,14 @@
 }
 :root{color-scheme:light;}
 :root {
-  --paper:   #dce8dc;   /*background */
+  --paper:   #dce8dc;
   --paper-2: #cfe0cf;
-  --ink:     #2b342c;   /* deep green ink */
-  --muted:   #5c6b5e;   /* muted green-gray text */
-  --line:    #b9ccb9;   /* hairline */
-  --sage:    #7d9a7e;   /* green accent */
+  --ink:     #2b342c;
+  --muted:   #5c6b5e;
+  --line:    #b9ccb9;
+  --sage:    #7d9a7e;
   --sage-dk: #566f58;
-  --rose:    #c2185b;   /* deep pink */
+  --rose:    #c2185b;
   --rose-dk: #9c1450;
 }
 
@@ -61,7 +60,6 @@ body {
   gap: clamp(2rem, 5vw, 4rem);
 }
 
-/* ---------- Left: content column ---------- */
 .content {
   display: flex;
   flex-direction: column;
@@ -92,7 +90,6 @@ body {
   font-size: clamp(1rem, 1.3vw, 1.06rem);
 }
 
-/* ---------- Cards (side by side, wide not tall) ---------- */
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -144,7 +141,6 @@ body {
   transform: translateX(0);
 }
 
-/* ---------- Footer ---------- */
 .foot {
   font-size: 0.86rem;
   color: var(--muted);
@@ -163,7 +159,6 @@ body {
 .foot a:hover { border-color: var(--rose-dk); }
 .foot-dot { color: var(--line); }
 
-/* ---------- Right: bunny column ---------- */
 .visual {
   display: flex;
   align-items: center;
@@ -175,10 +170,8 @@ body {
   width: 100%;      
   height: auto;
   filter: drop-shadow(0 12px 26px rgba(86, 111, 88, 0.32));
-
 }
 
-/* ---------- Motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
   .content, .visual { animation: rise 0.6s ease both; }
   .visual { animation-delay: 0.1s; }
@@ -188,7 +181,6 @@ body {
   }
 }
 
-/* ---------- Small / narrow screens: stack, bunny still big up top ---------- */
 @media (max-width: 860px) {
   .wrap {
     grid-template-columns: 1fr;
@@ -197,7 +189,7 @@ body {
     gap: 1.5rem;
   }
   .visual { order: -1; }
-  .bunny { width: 80% max-width: 420px; margin: 0 auto; }
+  .bunny { width: 80%; max-width: 420px; margin: 0 auto; }
   .cards { grid-template-columns: 1fr; gap: 0.6rem; max-width: none; }
   .card {
     flex-direction: row;
@@ -217,18 +209,16 @@ body {
       <p class="tagline">Living &amp; learning in a naturally super world.</p>
 
       <p class="intro">
-       <p class="intro">
-  I am an undergraduate researcher interested in the unprecedented impact of AI on the world at
-  large, where this creates friction with systems of education and what
-  technical and policy solutions can bring about productive change. I am a research assistant for
-  <a href="https://www.cs.virginia.edu/~evans/" target="_blank" rel="noopener">Professor David Evans</a>,
-  inaugural member of
-  <a href="https://dtdlab.virginia.edu/project/student-technology-council/" target="_blank" rel="noopener">UVA's Student Technology Council</a>,
-  and Vice President of
-  <a href="https://vaisi.org/"_blank" rel="noopener">VAISI</a>. I am a
-  Robert Kent Gooch scholar and recipient of the CS undergraduate
-  researcher award.
-</p>
+        I am an undergraduate researcher interested in the unprecedented impact of AI on the world at
+        large, where this creates friction with systems of education and what
+        technical and policy solutions can bring about productive change. I am a research assistant for
+        <a href="https://www.cs.virginia.edu/~evans/" target="_blank" rel="noopener">Professor David Evans</a>,
+        inaugural member of
+        <a href="https://dtdlab.virginia.edu/project/student-technology-council/" target="_blank" rel="noopener">UVA's Student Technology Council</a>,
+        and Vice President of
+        <a href="https://vaisi.org/" target="_blank" rel="noopener">VAISI</a>. I am a
+        Robert Kent Gooch scholar and recipient of the CS undergraduate
+        researcher award.
       </p>
 
       <nav class="cards" aria-label="Sections">
@@ -241,6 +231,12 @@ body {
         <a class="card" href="https://bookings.cloud.microsoft/bookwithme/user/ce671a40730e45f89d8baac38714e128%40virginia.edu?anonymous&ismsaljsauthenabled" target="_blank" rel="noopener">
           <span class="card-title">Time</span>
           <span class="card-desc">Book a chat</span>
+          <span class="card-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="card" href="my-work.html">
+          <span class="card-title">My Work</span>
+          <span class="card-desc">Projects, papers &amp; links</span>
           <span class="card-arrow" aria-hidden="true">↗</span>
         </a>
       </nav>
