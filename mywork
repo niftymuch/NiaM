@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Work — Nia M.</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #dce8dc;
+      color: #2b342c;
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      line-height: 1.6;
+    }
+    a { color: #9c1450; }
+    a:hover { text-decoration: underline; }
+    .back { display: inline-block; margin-bottom: 2rem; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back">← Back</a>
+
+  <h1>My Work</h1>
+
+  <!-- Add your links below. Just copy a line and change the text + URLs. -->
+
+  <p>Research paper — <a href="your-paper.pdf">PDF</a></p>
+  <p>Project name — <a href="https://example.com">live site</a></p>
+  <p>Another paper — <a href="another.pdf">PDF</a></p>
+
+</body>
+</html>
