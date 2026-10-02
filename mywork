@@ -26,9 +26,10 @@
 
   <!-- Add your links below. Just copy a line and change the text + URLs. -->
 
-  <p>Research paper — <a href="your-paper.pdf">PDF</a></p>
-  <p>Project name — <a href="https://example.com">live site</a></p>
-  <p>Another paper — <a href="another.pdf">PDF</a></p>
+  <p>Proxy Based Method for Measuring Disparities in Image Generators — <a href="proxypaper.pdf">PDF</a></p>
+  <p>Identifying and Validating Emotion Concept Representations in Gemma 2 2B — <a href="https://vaisi.substack.com/p/identifying-and-validating-emotion">live site</a></p>
+  <p>Public Benefit Capture for VA Data Centers — <a href="https://www.vaisi.org/research/fellowship_projects/Policy%20Virginia%20Public%20Contribution%20Req%20%E2%80%93%20Nia%20Mucher%20%E2%80%93%205_12_26.pdf">live site</a></p>
+  <p>Rendering the Invisible — <a href="rendering.pdf">PDF</a></p>
 
 </body>
 </html>
